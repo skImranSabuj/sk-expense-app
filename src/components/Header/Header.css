@@ -2,17 +2,39 @@
     width:121px;
     height: 100vh;
     background-color: FFFFFF;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     position: fixed;
     top: 0;
     left: 0;
     display:flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 0;
+    justify-content: space-between;
+    padding: 2rem 0;
+    padding-bottom: 4rem;
+    border-right: 1px solid #CECECE;
 }
 
 .logo{
-    height: 90px;
-    width:90px
+    height: 100px;
+    width: 100px;
+}
+
+.menuSelected{
+    background-color: var(--orange);
+    height:50px;
+    width:50px;
+    /* border: 1px solid blue; */
+    /* background-color: #FFC248; */
+}
+.menuItem{
+    /* background-color: transparent; */
+    height:50px;
+    width:50px;
+    border-radius: 25px;
+    margin: 0.5rem 0;
+    /* background-color: #FFC248; */
+}
+.menuList{
+    /* border: 1px solid red; */
 }
