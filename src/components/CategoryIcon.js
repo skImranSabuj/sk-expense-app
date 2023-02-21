@@ -19,7 +19,6 @@ const CategoryIcon = ({
   sx,
   index = 0,
 }) => {
-  const ImportedIconRef = useRef();
   const [svgIcon, setSvgIcon] = useState(icon0);
   const [bgColor, setBgColor] = useState(color);
   const [loading, setLoading] = useState(false);
@@ -30,10 +29,6 @@ const CategoryIcon = ({
 
   const categoryList = getCategories();
 
-  //   const { onCompleted, onError } = options;
-  // console.log("icon0->>>>", icon0);
-  // console.log("iconList->>>>", iconList);
-
   useEffect(() => {
     const importIcon = async () => {
       try {
@@ -42,22 +37,9 @@ const CategoryIcon = ({
           // console.log("index==>", iconList[cItem?.index || 0]);
           if (cItem?.catagory === item.catagory) {
             setBgColor(cItem.color);
-            setSvgIcon(iconList[cItem?.index || 0]);
           }
         });
-        // ImportedIconRef.current = (
-        //   await import(`../assests/images/categoryIcons/${item?.svg}.svg`)
-        // ).ReactComponent;
-
-        // console.log("ImportedIconRef.current-->", ImportedIconRef);
-        // setSvgIcon(ImportedIconRef.current);
-        // if (onCompleted) {
-        // //   onCompleted(name, ImportedIconRef.current);
-        // }
       } catch (err) {
-        // if (onError) {
-        //   onError(err);
-        // }
         setError(err);
       } finally {
         setLoading(false);

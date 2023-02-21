@@ -79,8 +79,11 @@ const DashBoardMain = () => {
             </AppCard>
           </Grid>
           <Grid item xs={12} md={5}>
-            <AppCard>
-              <Title size="sm">Categories</Title>
+            <AppCard sx={{ backgroundColor: "FFFFFF" }}>
+              <Box className="flx-rsbc">
+                <Title size="sm">Categories</Title>
+                <AppButton>+ Add </AppButton>
+              </Box>
               <hr />
               <Grid container>
                 {categoryList?.map((item, index) => (
