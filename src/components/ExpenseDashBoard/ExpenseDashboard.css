@@ -1,0 +1,29 @@
+.expenseDashBoard{
+    border: 2px solid blue;
+    display: flex;
+}
+
+
+.sideMenu{
+    width: 25%;
+    border: 1px solid green;
+    padding:1rem
+}
+
+.dashBoardMain{
+    width: 75%;
+}
+
+.appBarBox{
+    height: 5rem;
+    /* height: 120px; */
+    border: 1px solid black;
+    padding: 0.5rem;
+    /* display: flex;
+    align-items: center; */
+}
+
+.balanceCard{
+    background-color: var(--orange);
+    margin-top: 5rem;
+}
