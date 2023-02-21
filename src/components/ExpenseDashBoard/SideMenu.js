@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import React, { useState } from "react";
-import { getDateTimeStamp } from "../../utils/commonComputes";
+import { formatCurrency, getDateTimeStamp } from "../../utils/commonComputes";
 import { colors } from "../../utils/theme";
 import AppCard from "../AppCard";
 import Text from "../Text";
@@ -36,7 +36,7 @@ const SideMenu = () => {
           />
           <Box sx={{ px: 2 }}>
             <Title sx={{ lineHeight: "42.19px" }} size="lg">
-              {balance?.value}
+              {formatCurrency(balance?.value)}
             </Title>
             <Text>Total Expense</Text>
           </Box>

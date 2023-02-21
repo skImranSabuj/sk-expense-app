@@ -86,11 +86,11 @@ const DashBoardMain = () => {
                 {categoryList?.map((item, index) => (
                   <Grid
                     item
-                    xs={6}
+                    xs={4}
                     md={4}
                     key={index}
                     sx={{ p: 1 }}
-                    // sx={{ border: "1px solid black" }}
+                    className="flx-rcc"
                   >
                     <CategoryCard item={item} />
                   </Grid>

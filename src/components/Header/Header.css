@@ -1,5 +1,6 @@
 .sideBar{
-    width:121px;
+    width:5rem;
+    /* width:121px; */
     height: 100vh;
     background-color: FFFFFF;
     /* border: 1px solid red; */
@@ -17,8 +18,8 @@
 }
 
 .logo{
-    height: 100px;
-    width: 100px;
+    height: 4rem;
+    width: 4rem;
 }
 
 .menuSelected{

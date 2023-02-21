@@ -7,7 +7,8 @@
 .sideMenu{
     width: 25%;
     border-right: 1px solid #CECECE;
-    padding:1rem
+    padding:1rem;
+    background-color: #FFFBF3;
 }
 
 .dashBoardMain{
@@ -25,5 +26,16 @@
 
 .balanceCard{
     background-color: var(--orange);
-    margin-top: 5rem;
+    margin-top: 4rem;
+    background-image: url('../../assests/images/Decoration.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+.categoryCard{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 0.5rem;
+    background-color:#F4F4F4
 }
