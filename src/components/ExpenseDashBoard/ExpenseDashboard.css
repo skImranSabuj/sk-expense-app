@@ -1,12 +1,12 @@
 .expenseDashBoard{
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     display: flex;
 }
 
 
 .sideMenu{
     width: 25%;
-    border: 1px solid green;
+    border-right: 1px solid #CECECE;
     padding:1rem
 }
 
@@ -17,7 +17,7 @@
 .appBarBox{
     height: 5rem;
     /* height: 120px; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 0.5rem;
     /* display: flex;
     align-items: center; */

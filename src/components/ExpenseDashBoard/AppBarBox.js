@@ -1,12 +1,13 @@
+import { Box } from "@mui/material";
 import React from "react";
 import Text from "../Text";
 
-const AppBarBox = ({ children }) => {
+const AppBarBox = ({ children, sx, className }) => {
   return (
-    <div className="appBarBox">
+    <Box className={`appBarBox ${className}`} sx={{ ...sx }}>
       {/* <Text>App Bar box</Text> */}
       {children}
-    </div>
+    </Box>
   );
 };
 

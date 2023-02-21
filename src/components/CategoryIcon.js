@@ -1,40 +1,55 @@
 import { Box } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
-import defaultIcon from "../assests/images/categoryIcons/home.svg";
+import icon0 from "../assests/images/categoryIcons/car.svg";
+import icon1 from "../assests/images/categoryIcons/home.svg";
+import icon2 from "../assests/images/categoryIcons/document.svg";
+import icon3 from "../assests/images/categoryIcons/game.svg";
+import icon4 from "../assests/images/categoryIcons/password.svg";
+import icon5 from "../assests/images/categoryIcons/video.svg";
+import icon6 from "../assests/images/categoryIcons/buy.svg";
 import { getCategories } from "../utils/expenseData";
 import Text from "./Text";
 // import * as images from "../assests/images/categoryIcons";
 
-const CategoryIcon = ({ svg = "Home", color = "#5251FA", item, size = 24 }) => {
+const CategoryIcon = ({
+  svg = "Home",
+  color = "#5251FA",
+  item,
+  size = 20,
+  sx,
+  index = 0,
+}) => {
   const ImportedIconRef = useRef();
-  const [svgIcon, setSvgIcon] = useState(defaultIcon);
+  const [svgIcon, setSvgIcon] = useState(icon0);
   const [bgColor, setBgColor] = useState(color);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
 
+  let iconList = [icon0, icon1, icon2, icon3, icon4, icon5, icon6];
+
   const categoryList = getCategories();
 
   //   const { onCompleted, onError } = options;
-  console.log("item->>>>", item);
+  // console.log("icon0->>>>", icon0);
+  console.log("iconList->>>>", iconList);
 
   useEffect(() => {
     const importIcon = async () => {
       try {
         setLoading(true);
         categoryList.find((cItem) => {
-          console.log({ cItem });
+          console.log("index==>", iconList[cItem?.index || 0]);
           if (cItem?.catagory === item.catagory) {
             setBgColor(cItem.color);
+            setSvgIcon(iconList[cItem?.index || 0]);
           }
         });
-        ImportedIconRef.current = (
-          await import(
-            `../assests/images/categoryIcons/${item?.svg || svg}.svg`
-          )
-        ).ReactComponent;
+        // ImportedIconRef.current = (
+        //   await import(`../assests/images/categoryIcons/${item?.svg}.svg`)
+        // ).ReactComponent;
 
         // console.log("ImportedIconRef.current-->", ImportedIconRef);
-        setSvgIcon(ImportedIconRef.current);
+        // setSvgIcon(ImportedIconRef.current);
         // if (onCompleted) {
         // //   onCompleted(name, ImportedIconRef.current);
         // }
@@ -47,7 +62,8 @@ const CategoryIcon = ({ svg = "Home", color = "#5251FA", item, size = 24 }) => {
         setLoading(false);
       }
     };
-    if (item?.catagory) importIcon();
+    // if (item?.catagory)
+    importIcon();
   }, [item?.catagory]);
 
   if (loading) {
@@ -55,9 +71,9 @@ const CategoryIcon = ({ svg = "Home", color = "#5251FA", item, size = 24 }) => {
       className="flx-rcc"
       sx={{
         backgroundColor: bgColor,
-        height: "40px",
-        width: "40px",
-        borderRadius: "20px",
+        height: "32px",
+        width: "32px",
+        borderRadius: "16px",
       }}
     ></Box>;
   }
@@ -67,17 +83,18 @@ const CategoryIcon = ({ svg = "Home", color = "#5251FA", item, size = 24 }) => {
       className="flx-rcc"
       sx={{
         backgroundColor: bgColor,
-        height: "40px",
-        width: "40px",
-        borderRadius: "20px",
+        height: size * 2,
+        width: size * 2,
+        borderRadius: size,
+        ...sx,
       }}
     >
       <img
-        src={svgIcon}
+        src={icon2}
         alt="Image1"
         style={{
-          width: "24px",
-          height: "24px",
+          width: size,
+          height: size,
         }}
       />
     </Box>
