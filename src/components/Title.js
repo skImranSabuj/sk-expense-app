@@ -11,6 +11,10 @@ const Title = ({ children, variant = "h6", size = "md", sx }) => {
       fontWeight: "600",
       fontSize: "28px",
     },
+    sm: {
+      fontWeight: "600",
+      fontSize: "20px",
+    },
   };
   return (
     <Typography variant={variant} sx={{ ...styles[size], ...sx }}>

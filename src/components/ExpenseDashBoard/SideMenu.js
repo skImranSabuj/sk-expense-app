@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { getDateTimeStamp } from "../../utils/commonComputes";
 import { colors } from "../../utils/theme";
 import AppCard from "../AppCard";
@@ -8,6 +8,7 @@ import Title from "../Title";
 import AppBarBox from "./AppBarBox";
 import walletIcon from "../../assests/images/Wallet.svg";
 import ActivityItem from "./ActivityItem";
+import { getExpenseData } from "../../utils/expenseData";
 
 export const balance = {
   value: 55586,
@@ -15,6 +16,7 @@ export const balance = {
 };
 
 const SideMenu = () => {
+  const [data, setData] = useState(getExpenseData());
   return (
     <div className="sideMenu">
       <AppBarBox>
@@ -40,20 +42,28 @@ const SideMenu = () => {
           </Box>
         </Box>
       </AppCard>
-
+      <br />
       <Box>
         <Text>Latest Activity</Text>
         <hr />
-        {["Today", "Yesterday"].map((item) => (
-          <Box key={item}>
-            <Text>{item}</Text>
-            <Box>
-              <ActivityItem />
-            </Box>
-          </Box>
-        ))}
+        {
+          // ["Today", "Yesterday"].map((item) => (
+          //   <Box key={item} sx={{ my: 1 }}>
+          //     <Text sx={{ textAlign: "center" }}>{item}</Text>
+          //     <ActivityItem date={item} />
+          //   </Box>
+          // ))
+        }
+        <Box sx={{ my: 1 }}>
+          <Text sx={{ textAlign: "center" }}>{"Today"}</Text>
+          <ActivityItem date={"Today"} data={data.slice(1)} />
+        </Box>
+        <Box sx={{ my: 1 }}>
+          <Text sx={{ textAlign: "center" }}>{"Yesterday"}</Text>
+          <ActivityItem date={"Yesterday"} data={data.slice(2)} />
+        </Box>
 
-        <hr />
+        {/* <hr /> */}
       </Box>
     </div>
   );

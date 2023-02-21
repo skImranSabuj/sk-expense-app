@@ -12,7 +12,7 @@
   /* position: absolute;
   top:0;
   left:0; */
-  border:2px solid red;
+  /* border:2px solid red; */
   display: flex;
   /* flex-direction: column; */
   /* width: 100%; */
@@ -32,6 +32,11 @@
 .flx-rcc{
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.flx-rsbc{
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -61,7 +66,7 @@
   display:flex;
   justify-content: center;
   /* flex-direction: column; */
-  border: 2px solid brown;
+  /* border: 2px solid brown; */
   width: 100%;
   padding-left: 121px;
   /* justify-content: stretch */
