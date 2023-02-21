@@ -24,6 +24,7 @@ const CategoryIcon = ({
   const [bgColor, setBgColor] = useState(color);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
+  console.log(item.catagory);
 
   let iconList = [icon0, icon1, icon2, icon3, icon4, icon5, icon6];
 
@@ -31,14 +32,14 @@ const CategoryIcon = ({
 
   //   const { onCompleted, onError } = options;
   // console.log("icon0->>>>", icon0);
-  console.log("iconList->>>>", iconList);
+  // console.log("iconList->>>>", iconList);
 
   useEffect(() => {
     const importIcon = async () => {
       try {
         setLoading(true);
         categoryList.find((cItem) => {
-          console.log("index==>", iconList[cItem?.index || 0]);
+          // console.log("index==>", iconList[cItem?.index || 0]);
           if (cItem?.catagory === item.catagory) {
             setBgColor(cItem.color);
             setSvgIcon(iconList[cItem?.index || 0]);
