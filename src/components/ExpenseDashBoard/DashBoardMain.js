@@ -5,7 +5,6 @@ import AppButton from "../AppButton";
 import AppCard from "../AppCard";
 import Title from "../Title";
 import AppBarBox from "./AppBarBox";
-import CategoryCard from "./CategoryCard";
 import downIcon from "../../assests/images/downIcon.png";
 import userPhoto from "../../assests/images/userPhoto.png";
 import LastMonthLogs from "./LastMonthLogs";
@@ -18,8 +17,6 @@ import AppTextFiled from "../AppTextField/AppTextField";
 
 const DashBoardMain = () => {
   const categoryList = getCategories();
-
-  const user = {};
   return (
     <Box sx={{ width: "100%" }}>
       <AppBarBox className="flx-rsbc">

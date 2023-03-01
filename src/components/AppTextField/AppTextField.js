@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./AppTextFiled.css";
 
 const AppTextFiled = ({
   placeholder = "Enter Input",
-  onChange,
+  onChange = () => null,
   style,
   onEnterPress = () => console.log("ENTER PRESSED"),
 }) => {
