@@ -14,6 +14,7 @@ import CategoryIcon from "../CategoryIcon";
 import { formatCurrency } from "../../utils/commonComputes";
 import AppChart from "../AppChart";
 import ExpenseCategories from "./ExpenseCategories";
+import AppTextFiled from "../AppTextField/AppTextField";
 
 const DashBoardMain = () => {
   const categoryList = getCategories();
@@ -21,12 +22,14 @@ const DashBoardMain = () => {
   const user = {};
   return (
     <Box sx={{ width: "100%" }}>
-      <AppBarBox
-        // sx={{ display: "flex", alignItems: "center" }}
-        className="flx-rec"
-      >
+      <AppBarBox className="flx-rsbc">
+        <Box className="flx-rsbc">
+          <Box>
+            <AppTextFiled style={{ width: "25rem", height: "50px" }} />
+            <AppButton style={{ height: "50px" }}>+ Add Expense</AppButton>
+          </Box>
+        </Box>
         <Box className="flx-rec">
-          <AppButton>+ Add Expense</AppButton>
           <Avatar
             style={{
               width: "50px",

@@ -3,6 +3,7 @@ import React from "react";
 import { getCategories } from "../../utils/expenseData";
 import AppButton from "../AppButton";
 import AppCard from "../AppCard";
+import AppTextFiled from "../AppTextField/AppTextField";
 import Title from "../Title";
 import CategoryCard from "./CategoryCard";
 
@@ -13,7 +14,10 @@ const ExpenseCategories = () => {
       <AppCard sx={{ backgroundColor: "FFFFFF" }}>
         <Box className="flx-rsbc">
           <Title size="sm">Categories</Title>
-          <AppButton>+ Add </AppButton>
+          <Box>
+            <AppTextFiled />
+            <AppButton>+ Add </AppButton>
+          </Box>
         </Box>
         <hr />
         <Grid container>
