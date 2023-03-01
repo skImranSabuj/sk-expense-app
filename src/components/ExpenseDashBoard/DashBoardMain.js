@@ -13,6 +13,7 @@ import Text from "../Text";
 import CategoryIcon from "../CategoryIcon";
 import { formatCurrency } from "../../utils/commonComputes";
 import AppChart from "../AppChart";
+import ExpenseCategories from "./ExpenseCategories";
 
 const DashBoardMain = () => {
   const categoryList = getCategories();
@@ -78,29 +79,7 @@ const DashBoardMain = () => {
               <AppChart />
             </AppCard>
           </Grid>
-          <Grid item xs={12} md={5}>
-            <AppCard sx={{ backgroundColor: "FFFFFF" }}>
-              <Box className="flx-rsbc">
-                <Title size="sm">Categories</Title>
-                <AppButton>+ Add </AppButton>
-              </Box>
-              <hr />
-              <Grid container>
-                {categoryList?.map((item, index) => (
-                  <Grid
-                    item
-                    xs={4}
-                    md={4}
-                    key={index}
-                    sx={{ p: 1 }}
-                    className="flx-rcc"
-                  >
-                    <CategoryCard item={item} />
-                  </Grid>
-                ))}
-              </Grid>
-            </AppCard>
-          </Grid>
+          <ExpenseCategories />
         </Grid>
         <Box sx={{ p: 2 }}>
           <Title size="sm">Last Month Activities</Title>

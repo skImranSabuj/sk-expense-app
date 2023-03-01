@@ -1,3 +1,9 @@
+.layout{
+    display: flex;
+}
+.App-body{
+    margin-left: 5rem;
+}
 .sideBar{
     width:5rem;
     /* width:121px; */

@@ -1,5 +1,4 @@
 .expenseDashBoard{
-    /* border: 2px solid blue; */
     display: flex;
 }
 
@@ -18,11 +17,7 @@
 
 .appBarBox{
     height: 5rem;
-    /* height: 120px; */
-    /* border: 1px solid black; */
     padding: 0.5rem;
-    /* display: flex;
-    align-items: center; */
 }
 
 .balanceCard{
