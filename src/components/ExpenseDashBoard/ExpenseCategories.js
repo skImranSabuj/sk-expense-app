@@ -1,4 +1,5 @@
 import { Box, Grid } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { getCategories } from "../../utils/expenseData";
 import AppButton from "../AppButton";
@@ -8,7 +9,17 @@ import Title from "../Title";
 import CategoryCard from "./CategoryCard";
 
 const ExpenseCategories = () => {
-  const categoryList = getCategories();
+  // const categoryList = getCategories();
+
+  const {
+    isLoading,
+    error,
+    data: categoryList,
+  } = useQuery({
+    queryKey: ["categoryList"],
+    queryFn: getCategories,
+  });
+
   return (
     <Grid item xs={12} md={5}>
       <AppCard sx={{ backgroundColor: "FFFFFF" }}>
@@ -21,18 +32,22 @@ const ExpenseCategories = () => {
         </Box>
         <hr />
         <Grid container>
-          {categoryList?.map((item, index) => (
-            <Grid
-              item
-              xs={4}
-              md={4}
-              key={index}
-              sx={{ p: 1 }}
-              className="flx-rcc"
-            >
-              <CategoryCard item={item} />
-            </Grid>
-          ))}
+          {!isLoading ? (
+            categoryList?.map((item, index) => (
+              <Grid
+                item
+                xs={4}
+                md={4}
+                key={index}
+                sx={{ p: 1 }}
+                className="flx-rcc"
+              >
+                <CategoryCard item={item} />
+              </Grid>
+            ))
+          ) : (
+            <AppCard>Loading..</AppCard>
+          )}
         </Grid>
       </AppCard>
     </Grid>
